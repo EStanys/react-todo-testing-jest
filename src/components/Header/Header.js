@@ -7,7 +7,7 @@ export default function Header({
     return (
       <>
         <h1 data-testid='main-title' className='header'>{title}</h1>
-        <h4 title='second'>Second title</h4>
+        <h4 className='h4' title='second'>App</h4>
       </>
     );
 }

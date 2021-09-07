@@ -20,7 +20,7 @@ describe('Async testing', () => {
     // expect(contactElArr).toBeInTheDocument();
   });
 
-  it('Renders One Follower card on the screen', async () => {
+  it('Renders Two Follower card on the screen', async () => {
     render(<MockFList />);
     const contactEl = await screen.findByTestId(/contact-el-0/);
     expect(contactEl).toBeInTheDocument();

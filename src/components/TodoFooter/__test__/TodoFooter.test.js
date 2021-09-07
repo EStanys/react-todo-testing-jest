@@ -14,6 +14,23 @@ function MockTodoFooter({ numberOfIncompleteTasks }) {
 
   describe('Footer tests', () => {
 
+  // hooks
+  beforeAll(() => {
+    console.log('before all test');
+  })
+
+  beforeEach(() => {
+    console.log('before every test');
+  })
+
+  afterEach(() => {
+    console.log('after every test');
+  })
+
+   afterAll(() => {
+     console.log('after all test');
+   });
+
   it('Should render correct amount of tasks', () => {
     render(<MockTodoFooter numberOfIncompleteTasks={3} />);
 

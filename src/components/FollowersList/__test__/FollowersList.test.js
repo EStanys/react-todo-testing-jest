@@ -1,4 +1,4 @@
-import { screen, render } from '@testing-library/react';
+import { screen, render, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import FollowersList from '../FollowersList';
 
@@ -20,9 +20,17 @@ describe('Async testing', () => {
     // expect(contactElArr).toBeInTheDocument();
   });
 
+  
   it('Renders Two Follower card on the screen', async () => {
     render(<MockFList />);
-    const contactEl = await screen.findByTestId(/contact-el-0/);
+
+    let contactEl;
+
+    await waitFor(() => {
+      contactEl = screen.getByTestId(/contact-el-0/);
+    });
+    // arba const contactEl = await screen.findByTestId(/contact-el-0/);
+    
     expect(contactEl).toBeInTheDocument();
     // screen.debug();
   });
